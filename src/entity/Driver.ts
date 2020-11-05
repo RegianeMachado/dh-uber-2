@@ -10,4 +10,8 @@ export class Driver {
 
   @Column()
   carro: string;
+
+  constructor(props: Omit<Driver, "id">) {
+    Object.assign(this, props);
+  }
 }

@@ -6,6 +6,7 @@ export default class ListUserRunningCase {
 
   async execute() {
     const running = await this.runningsRepository.findAll();
-    console.log(running);
+
+    return running;
   }
 }

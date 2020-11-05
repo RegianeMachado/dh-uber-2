@@ -6,8 +6,8 @@ export default class ListUserRunningController {
 
   handle = async (request: Request, response: Response): Promise<Response> => {
     try {
-      await this.ListUserRunningCase.execute();
-      return response.status(201).send();
+      const run = await this.ListUserRunningCase.execute();
+      return response.status(201).json(run);
     } catch (err) {
       return response.status(400).json({
         message: err.message || "Não foi possível identificar o erro",
